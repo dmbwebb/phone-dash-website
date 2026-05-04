@@ -377,7 +377,7 @@
   color: #ffffff;
   text-decoration: none;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: all 0.25s ease;
+  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -477,7 +477,8 @@
   color: var(--text-primary);
 }
 
-.section h2::before {
+.section h2::before,
+.register-split__col h2::before {
   content: '';
   display: inline-block;
   width: 3px;
@@ -706,16 +707,6 @@ ol.numbered-list li::before {
   gap: 10px;
   color: var(--text-primary);
   margin-bottom: var(--space-sm);
-}
-
-.register-split__col h2::before {
-  content: '';
-  display: inline-block;
-  width: 3px;
-  height: 1.1em;
-  background: linear-gradient(to bottom, var(--accent), var(--accent-bright));
-  border-radius: 2px;
-  flex-shrink: 0;
 }
 
 .register-split .form-embed,

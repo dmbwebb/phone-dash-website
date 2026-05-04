@@ -120,7 +120,7 @@ function Privacy() {
           <div className="contact-card">
             <p>
               <strong>Duncan Webb</strong><br />
-              Email: <a href="mailto:dmbwebb@gmail.com">dmbwebb@gmail.com</a><br />
+              Email: <a href="mailto:duncan.webb@novasbe.pt">duncan.webb@novasbe.pt</a><br />
               WhatsApp: +33 7 82 64 65 07
             </p>
           </div>

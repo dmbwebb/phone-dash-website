@@ -44,6 +44,7 @@ function Registration() {
                 width="100%"
                 height="600"
                 frameBorder="0"
+                loading="lazy"
                 title={t('registerWhatsappTitle')}
               />
             </div>
@@ -56,6 +57,7 @@ function Registration() {
                 src="https://www.youtube-nocookie.com/embed/Jvzp7VM_z7I?modestbranding=1&rel=0"
                 width="100%"
                 title={t('registerVideoTitle')}
+                loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
