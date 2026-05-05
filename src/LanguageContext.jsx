@@ -130,11 +130,14 @@ const translations = {
     registerWhatsappTitle: 'Join the free program — write to us!',
 
     // Agendar
+    navAgendar: 'Schedule',
     agendarTitle: 'Schedule your first call',
     agendarSubtitle: 'A 25-MINUTE INTRODUCTORY CALL TO START THE PROGRAM',
     agendarIntro: "We're so glad you're here! Pick a time that works for you and your child. In 25 minutes we'll get to know each other, walk you through how the program works, and answer your questions.",
     agendarFallback: "If the calendar doesn't load below,",
     agendarFallbackLink: 'open it directly here',
+    agendarCta: 'Schedule your first call',
+    agendarCtaHelper: 'Already filled out the form? Pick a time for your introductory call:',
   },
   es: {
     // Nav
@@ -263,11 +266,14 @@ const translations = {
     registerWhatsappTitle: '¡Inscríbete al programa gratuito — escríbenos!',
 
     // Agendar
+    navAgendar: 'Agendar',
     agendarTitle: 'Agenda tu primera llamada',
     agendarSubtitle: 'LLAMADA INTRODUCTORIA DE 25 MINUTOS PARA EMPEZAR EL PROGRAMA',
     agendarIntro: '¡Bienvenido/a! Elige el horario que mejor les quede a ti y a tu hijo/a. En 25 minutos vamos a conocernos, contarte cómo funciona el programa y resolver tus dudas.',
     agendarFallback: 'Si el calendario no carga,',
     agendarFallbackLink: 'ábrelo directamente aquí',
+    agendarCta: 'Agendar tu primera llamada',
+    agendarCtaHelper: '¿Ya llenaste el formulario? Elige el horario de tu llamada introductoria:',
   },
 }
 

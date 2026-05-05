@@ -364,6 +364,25 @@
   box-shadow: 0 8px 30px rgba(239, 68, 68, 0.38);
 }
 
+/* Agendar CTA — green/teal variant (signals "next step / confirmed") */
+.cta-link--agendar {
+  background: #16A34A;
+  box-shadow: 0 4px 20px rgba(22, 163, 74, 0.28);
+  gap: 0.6rem;
+}
+.cta-link--agendar:hover {
+  background: #15803D;
+  box-shadow: 0 8px 30px rgba(22, 163, 74, 0.4);
+}
+/* Two icons: only animate the trailing arrow on hover */
+.cta-link--agendar svg:first-of-type {
+  width: 18px;
+  height: 18px;
+}
+.cta-link--agendar:hover svg:first-of-type {
+  transform: none;
+}
+
 /* ═══════════════════════════════════════
    GOOGLE PLAY INSTALL BUTTON
 ═══════════════════════════════════════ */
@@ -765,6 +784,24 @@ ol.numbered-list li::before {
 
 .agendar-fallback a:hover {
   color: var(--accent-bright);
+}
+
+/* "Next step" CTA on /register pointing to /agendar */
+.agendar-next {
+  margin: var(--space-xl) auto 0;
+  padding: var(--space-lg) var(--space-md);
+  max-width: 720px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(22, 163, 74, 0.07) 0%, rgba(22, 163, 74, 0.02) 100%);
+  border: 1px solid rgba(22, 163, 74, 0.18);
+  border-radius: var(--radius-md);
+}
+
+.agendar-next__helper {
+  margin: 0 0 var(--space-sm);
+  font-size: 0.98rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
 }
 
 /* ═══════════════════════════════════════
