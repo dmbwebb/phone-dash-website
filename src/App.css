@@ -728,6 +728,46 @@ ol.numbered-list li::before {
 }
 
 /* ═══════════════════════════════════════
+   AGENDAR (Calendar embed page)
+═══════════════════════════════════════ */
+.agendar-intro {
+  max-width: 720px;
+  margin: 0 auto var(--space-md);
+  text-align: center;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.agendar-embed {
+  max-width: 900px;
+}
+
+.agendar-embed iframe {
+  width: 100%;
+  min-height: 700px;
+  border: none;
+  display: block;
+}
+
+.agendar-fallback {
+  max-width: 720px;
+  margin: var(--space-md) auto var(--space-lg);
+  text-align: center;
+  font-size: 0.92rem;
+  color: var(--text-muted, #64748b);
+}
+
+.agendar-fallback a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.agendar-fallback a:hover {
+  color: var(--accent-bright);
+}
+
+/* ═══════════════════════════════════════
    RESPONSIVE
 ═══════════════════════════════════════ */
 @media (max-width: 640px) {

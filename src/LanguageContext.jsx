@@ -128,6 +128,13 @@ const translations = {
     registerSubtitle: 'GUIDANCE PROGRAM FOR PARENTS AND CAREGIVERS ON HEALTHY SMARTPHONE USE IN ADOLESCENCE',
     registerVideoTitle: 'Why join the program?',
     registerWhatsappTitle: 'Join the free program — write to us!',
+
+    // Agendar
+    agendarTitle: 'Schedule your first call',
+    agendarSubtitle: 'A 25-MINUTE INTRODUCTORY CALL TO START THE PROGRAM',
+    agendarIntro: "We're so glad you're here! Pick a time that works for you and your child. In 25 minutes we'll get to know each other, walk you through how the program works, and answer your questions.",
+    agendarFallback: "If the calendar doesn't load below,",
+    agendarFallbackLink: 'open it directly here',
   },
   es: {
     // Nav
@@ -254,6 +261,13 @@ const translations = {
     registerSubtitle: 'PROGRAMA DE ORIENTACIÓN A PADRES, MADRES Y CUIDADORES EN EL USO SALUDABLE DE CELULARES EN LA ADOLESCENCIA',
     registerVideoTitle: '¿Por qué inscribirte al programa?',
     registerWhatsappTitle: '¡Inscríbete al programa gratuito — escríbenos!',
+
+    // Agendar
+    agendarTitle: 'Agenda tu primera llamada',
+    agendarSubtitle: 'LLAMADA INTRODUCTORIA DE 25 MINUTOS PARA EMPEZAR EL PROGRAMA',
+    agendarIntro: '¡Bienvenido/a! Elige el horario que mejor les quede a ti y a tu hijo/a. En 25 minutos vamos a conocernos, contarte cómo funciona el programa y resolver tus dudas.',
+    agendarFallback: 'Si el calendario no carga,',
+    agendarFallbackLink: 'ábrelo directamente aquí',
   },
 }
 
