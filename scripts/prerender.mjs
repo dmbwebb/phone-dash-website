@@ -19,12 +19,14 @@ try {
   const { LanguageProvider } = await vite.ssrLoadModule('/src/LanguageContext.jsx')
   const { default: Privacy } = await vite.ssrLoadModule('/src/pages/Privacy.jsx')
   const { default: DataDeletion } = await vite.ssrLoadModule('/src/pages/DataDeletion.jsx')
+  const { default: Programa } = await vite.ssrLoadModule('/src/pages/Programa.jsx')
 
   const template = await fs.readFile(path.join(root, 'dist/index.html'), 'utf-8')
 
   const routes = [
     { url: '/privacy', Component: Privacy, out: 'dist/privacy/index.html' },
     { url: '/delete-data', Component: DataDeletion, out: 'dist/delete-data/index.html' },
+    { url: '/programa', Component: Programa, out: 'dist/programa/index.html' },
   ]
 
   for (const { url, Component, out } of routes) {

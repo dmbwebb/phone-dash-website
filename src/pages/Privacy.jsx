@@ -14,8 +14,14 @@ function Privacy() {
           <span>Mi Ritmo Digital</span>
         </Link>
         <div className="nav-links">
+          <Link to="/programa" className="nav-link">
+            {t('navPrograma')}
+          </Link>
           <Link to="/register" className="nav-link">
             {t('navRegister')}
+          </Link>
+          <Link to="/agendar" className="nav-link">
+            {t('navAgendar')}
           </Link>
           <Link to="/privacy" className="nav-link">
             {t('navPrivacy')}

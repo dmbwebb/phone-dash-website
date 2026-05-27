@@ -364,6 +364,104 @@
   box-shadow: 0 8px 30px rgba(239, 68, 68, 0.38);
 }
 
+/* ═══════════════════════════════════════
+   FLOATING WHATSAPP BUTTON — site-wide
+═══════════════════════════════════════ */
+.whatsapp-float {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4), 0 2px 6px rgba(0, 0, 0, 0.12);
+  z-index: 1000;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  animation: whatsapp-pulse 2.6s ease-out infinite;
+}
+
+.whatsapp-float svg {
+  width: 30px;
+  height: 30px;
+}
+
+.whatsapp-float:hover,
+.whatsapp-float:focus-visible {
+  background: #1DA851;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5), 0 3px 8px rgba(0, 0, 0, 0.15);
+  animation-play-state: paused;
+}
+
+/* Tooltip on hover (desktop). Hidden on mobile via media query below. */
+.whatsapp-float::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  right: calc(100% + 0.6rem);
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(17, 24, 39, 0.92);
+  color: #ffffff;
+  padding: 0.45rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.whatsapp-float:hover::after,
+.whatsapp-float:focus-visible::after {
+  opacity: 1;
+}
+
+@keyframes whatsapp-pulse {
+  0%   { box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4), 0 0 0 0 rgba(37, 211, 102, 0.55); }
+  70%  { box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4), 0 0 0 14px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4), 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+@media (max-width: 640px) {
+  .whatsapp-float {
+    right: 1rem;
+    bottom: 1rem;
+    width: 52px;
+    height: 52px;
+  }
+  .whatsapp-float svg { width: 28px; height: 28px; }
+  .whatsapp-float::after { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-float { animation: none; }
+}
+
+/* WhatsApp CTA — official WhatsApp green, leading icon */
+.cta-link--whatsapp {
+  background: #25D366;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.32);
+  gap: 0.65rem;
+}
+.cta-link--whatsapp:hover {
+  background: #1DA851;
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.45);
+}
+.cta-link--whatsapp svg {
+  width: 22px;
+  height: 22px;
+  transition: transform 0.2s ease;
+}
+.cta-link--whatsapp:hover svg {
+  transform: scale(1.08);
+}
+
 /* Agendar CTA — green/teal variant (signals "next step / confirmed") */
 .cta-link--agendar {
   background: #16A34A;
@@ -805,6 +903,403 @@ ol.numbered-list li::before {
 }
 
 /* ═══════════════════════════════════════
+   PROGRAMA — hero
+═══════════════════════════════════════ */
+.programa-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-lg) var(--space-sm) var(--space-xl);
+  margin-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--border);
+}
+
+.programa-hero__icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  margin-bottom: var(--space-md);
+  box-shadow:
+    0 0 0 1px var(--border),
+    0 0 36px rgba(37, 99, 235, 0.18),
+    0 14px 36px rgba(0, 0, 0, 0.06);
+  animation: float 6s ease-in-out infinite;
+}
+
+.programa-hero h1 {
+  margin-bottom: var(--space-sm);
+}
+
+.programa-hero__subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 560px;
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
+}
+
+.programa-hero__cta {
+  margin-top: var(--space-xs);
+}
+
+/* ═══════════════════════════════════════
+   PROGRAMA — "how it works" list (Section 2)
+═══════════════════════════════════════ */
+.programa-howlist {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-sm) 0 var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.programa-howlist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 0.85rem 1.1rem;
+  background: var(--surface-solid);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  /* Reset the default ul::before bullet */
+  padding-left: 1.1rem;
+  margin-bottom: 0;
+  line-height: 1.5;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.programa-howlist li::before {
+  display: none;
+}
+
+.programa-howlist li:hover {
+  transform: translateX(2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.programa-howlist__icon {
+  font-size: 1.4rem;
+  line-height: 1.3;
+  flex-shrink: 0;
+}
+
+.programa-howlist strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+/* ═══════════════════════════════════════
+   PROGRAMA — module cards (Section 3)
+═══════════════════════════════════════ */
+.programa-modules {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+@media (min-width: 720px) {
+  .programa-modules {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.programa-module {
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  border: 1.5px solid;
+  background: var(--surface-solid);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.programa-module:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.07);
+}
+
+.programa-module__icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.programa-module h3 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.programa-module p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.programa-module--blue {
+  border-color: rgba(37, 99, 235, 0.25);
+  background: linear-gradient(180deg, rgba(37, 99, 235, 0.05) 0%, var(--surface-solid) 60%);
+}
+.programa-module--yellow {
+  border-color: rgba(245, 158, 11, 0.30);
+  background: linear-gradient(180deg, rgba(245, 158, 11, 0.06) 0%, var(--surface-solid) 60%);
+}
+.programa-module--coral {
+  border-color: rgba(239, 68, 68, 0.25);
+  background: linear-gradient(180deg, rgba(239, 68, 68, 0.05) 0%, var(--surface-solid) 60%);
+}
+
+/* ═══════════════════════════════════════
+   PROGRAMA — benefits list (Section 4)
+═══════════════════════════════════════ */
+.programa-benefits {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-sm) 0 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xs);
+}
+
+@media (min-width: 720px) {
+  .programa-benefits {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.programa-benefits li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 0.7rem 0.5rem;
+  padding-left: 0.5rem;
+  margin-bottom: 0;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.programa-benefits li::before {
+  display: none;
+}
+
+.programa-benefits__icon {
+  font-size: 1.3rem;
+  line-height: 1.3;
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════
+   PROGRAMA — eligibility list (Section 6)
+═══════════════════════════════════════ */
+.programa-eligibility {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-sm) 0;
+}
+
+.programa-eligibility li {
+  position: relative;
+  padding: 0.55rem 0 0.55rem 1.85rem;
+  margin-bottom: 0;
+  color: var(--text-secondary);
+}
+
+.programa-eligibility li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  background: linear-gradient(135deg, var(--accent), var(--accent-bright));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.programa-eligibility__note {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: var(--space-xs);
+}
+
+/* ═══════════════════════════════════════
+   PROGRAMA — FAQ (Section 7)
+═══════════════════════════════════════ */
+.programa-faq {
+  margin-top: var(--space-sm);
+}
+
+.programa-faq dt {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 1.02rem;
+  color: var(--text-primary);
+  margin-top: var(--space-md);
+}
+
+.programa-faq dt:first-of-type {
+  margin-top: 0;
+}
+
+.programa-faq dd {
+  margin: 0.4rem 0 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ═══════════════════════════════════════
+   PROGRAMA — Final CTA card
+═══════════════════════════════════════ */
+.programa-final-cta {
+  margin-top: var(--space-xl);
+  padding: var(--space-lg) var(--space-md);
+  text-align: center;
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.06) 0%, rgba(245, 158, 11, 0.04) 50%, rgba(37, 99, 235, 0.05) 100%);
+  border: 1px solid rgba(239, 68, 68, 0.18);
+  border-radius: var(--radius-lg);
+}
+
+.programa-final-cta h2 {
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+.programa-final-cta h2::before {
+  display: none;
+}
+
+.programa-final-cta p {
+  max-width: 480px;
+  margin: 0 auto var(--space-md);
+  color: var(--text-secondary);
+}
+
+/* ═══════════════════════════════════════
+   REGISTRATION — short intro blocks
+═══════════════════════════════════════ */
+.register-intro {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+@media (min-width: 900px) {
+  .register-intro {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+  }
+}
+
+.register-intro__block {
+  padding: var(--space-md);
+  background: var(--surface-solid);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.register-intro__block h2 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin: 0;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.register-intro__block h2::before {
+  content: '';
+  display: inline-block;
+  width: 3px;
+  height: 1.1em;
+  background: linear-gradient(to bottom, var(--accent), var(--accent-bright));
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.register-intro__block p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.register-intro__benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.register-intro__benefits li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 0;
+  margin-bottom: 0;
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.register-intro__benefits li::before {
+  display: none;
+}
+
+.register-intro__icon {
+  font-size: 1.15rem;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+
+.register-intro__block--trust {
+  background: linear-gradient(180deg, rgba(37, 99, 235, 0.04) 0%, var(--surface-solid) 60%);
+  border-color: rgba(37, 99, 235, 0.20);
+}
+
+.register-intro__more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: var(--space-xs);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.register-intro__more svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.2s ease;
+}
+
+.register-intro__more:hover svg {
+  transform: translateX(3px);
+}
+
+/* ═══════════════════════════════════════
    RESPONSIVE
 ═══════════════════════════════════════ */
 @media (max-width: 640px) {
@@ -817,16 +1312,26 @@ ol.numbered-list li::before {
     gap: 8px;
   }
 
+  .nav-brand span {
+    font-size: 0.92rem;
+  }
+
   .nav-links {
     width: 100%;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 4px;
+    gap: 2px;
+    row-gap: 4px;
   }
 
   .nav-link {
-    font-size: 0.82rem;
-    padding: 0.35rem 0.6rem;
+    font-size: 0.78rem;
+    padding: 0.3rem 0.5rem;
+  }
+
+  .lang-toggle {
+    font-size: 0.78rem;
+    padding: 0.3rem 0.55rem;
   }
 
   .hero {

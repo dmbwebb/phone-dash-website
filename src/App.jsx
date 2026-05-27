@@ -5,6 +5,8 @@ import Privacy from './pages/Privacy'
 import DataDeletion from './pages/DataDeletion'
 import Registration from './pages/Registration'
 import Agendar from './pages/Agendar'
+import Programa from './pages/Programa'
+import WhatsAppFloat from './components/WhatsAppFloat'
 import './App.css'
 
 function App() {
@@ -20,13 +22,17 @@ function App() {
   }, [location])
 
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/privacy" element={<Privacy />} />
-      <Route path="/delete-data" element={<DataDeletion />} />
-      <Route path="/register" element={<Registration />} />
-      <Route path="/agendar" element={<Agendar />} />
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/delete-data" element={<DataDeletion />} />
+        <Route path="/register" element={<Registration />} />
+        <Route path="/agendar" element={<Agendar />} />
+        <Route path="/programa" element={<Programa />} />
+      </Routes>
+      <WhatsAppFloat />
+    </>
   )
 }
 

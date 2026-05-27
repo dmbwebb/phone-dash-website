@@ -8,6 +8,7 @@ const translations = {
     navPrivacy: 'Privacy',
     navDeleteData: 'Delete Data',
     navRegister: 'Register',
+    navPrograma: 'About the program',
 
     // Home — tabs
     tabApp: 'The App',
@@ -124,26 +125,124 @@ const translations = {
     deleteAfterText: 'Once your data is deleted, you will no longer be able to participate in the study. If you only wish to stop using the app but keep your data for the research, you can simply uninstall the app without submitting a deletion request.',
 
     // Registration
-    registerTitle: 'Mi Ritmo Digital - Registration Form',
-    registerSubtitle: 'GUIDANCE PROGRAM FOR PARENTS AND CAREGIVERS ON HEALTHY SMARTPHONE USE IN ADOLESCENCE',
+    registerHeroH1: 'Register for the program',
+    registerHeroSubtitle: 'Message us on WhatsApp and a program advisor will get back to you. It is free, with no commitment.',
+    registerHeroCta: 'Message us on WhatsApp',
+    registerFinalCtaH2: 'Ready to start?',
+    registerFinalCtaText: 'Send us a WhatsApp and a program advisor will reach out to schedule your welcome call.',
+    registerFinalCtaBtn: 'Message us on WhatsApp',
     registerVideoTitle: 'Why join the program?',
-    registerWhatsappTitle: 'Join the free program — write to us!',
 
     // Agendar
     navAgendar: 'Schedule',
-    agendarTitle: 'Schedule your first call',
-    agendarSubtitle: 'A 25-MINUTE INTRODUCTORY CALL TO START THE PROGRAM',
-    agendarIntro: "We're so glad you're here! Pick a time that works for you and your child. In 25 minutes we'll get to know each other, walk you through how the program works, and answer your questions.",
+    agendarTitle: 'Schedule your call',
+    agendarSubtitle: 'A 25-MINUTE CALL WITH THE PROGRAM TEAM',
+    agendarIntro: 'Pick a time that works for you and your child. Your call will last about 25 minutes.',
     agendarFallback: "If the calendar doesn't load below,",
     agendarFallbackLink: 'open it directly here',
-    agendarCta: 'Schedule your first call',
-    agendarCtaHelper: 'Already filled out the form? Pick a time for your introductory call:',
+    agendarCta: 'Schedule your call',
+    agendarCtaHelper: 'Already filled out the form? Pick a time for your call:',
+
+    // Programa — Hero
+    programaHeroH1: 'Find your Digital Rhythm',
+    programaHeroSubtitle: 'A free guidance program for parents and caregivers who want to help their adolescent children build a healthier relationship with their phone.',
+    programaHeroCta: 'Register for the program',
+
+    // Programa — Section 1: Why
+    programaS1H2: 'So your child learns better and feels better',
+    programaS1P1: 'Problematic phone use in adolescence affects the two things parents care most about: <strong>school performance</strong> and <strong>emotional wellbeing</strong> — sleep, attention, mood, self-esteem. <strong>Mi Ritmo Digital</strong> exists to support you on both fronts.',
+    programaS1P2: 'We walk alongside you with close conversations and evidence-based tools so you and your child can find a better balance.',
+
+    // Programa — Section 2: How it works
+    programaS2H2: 'Three weeks. Short calls with an expert. From the comfort of your home.',
+    programaS2Lead: 'The program runs for <strong>3 weeks</strong> by <strong>phone and WhatsApp</strong> — you choose the times.',
+    programaS2Item1Icon: '🗓',
+    programaS2Item1Label: '1 welcome call',
+    programaS2Item1Detail: '(~20 min)',
+    programaS2Item2Icon: '📞',
+    programaS2Item2Label: '3 weekly calls',
+    programaS2Item2Detail: '(~20 min each), with your expert facilitator',
+    programaS2Item3Icon: '💬',
+    programaS2Item3Label: 'WhatsApp messages',
+    programaS2Item3Detail: 'between sessions',
+    programaS2Item4Icon: '📱',
+    programaS2Item4Label: 'The Mi Ritmo Digital app',
+    programaS2Item4Detail: 'to understand phone use',
+    programaS2Total: 'About <strong>1.5 hours total</strong>, spread across small conversations.',
+
+    // Programa — Section 3: Modules
+    programaS3H2: 'Three topics, one per week',
+    programaS3M1Icon: '🌙',
+    programaS3M1Title: 'Module 1 — Sleep and phones',
+    programaS3M1Desc: 'The importance of sleep in adolescence and how phones can affect it.',
+    programaS3M2Icon: '⏱',
+    programaS3M2Title: 'Module 2 — Quality time',
+    programaS3M2Desc: 'How much time adolescents really spend in front of screens, and what the evidence says about its use.',
+    programaS3M3Icon: '🎬',
+    programaS3M3Title: 'Module 3 — Quality content',
+    programaS3M3Desc: 'What kind of content adolescents consume on their phones, and how it can influence their wellbeing.',
+
+    // Programa — Section 4: Benefits
+    programaS4H2: 'Benefits for you and your child',
+    programaS4Item1Icon: '📞',
+    programaS4Item1: 'A person who listens and walks with you each week.',
+    programaS4Item2Icon: '🧠',
+    programaS4Item2: "More clarity on how phones affect your child's wellbeing and learning.",
+    programaS4Item3Icon: '🛠',
+    programaS4Item3: 'Concrete, evidence-based tools.',
+    programaS4Item4Icon: '🌿',
+    programaS4Item4: 'Calmer conversations at home.',
+
+    // Programa — Section 5: Who's behind
+    programaS5H2: "Who's behind the program",
+    programaS5P1: 'This program is an initiative of researchers at <strong>Nova School of Business and Economics, Harvard, Yale, MIT and the Paris School of Economics</strong>, as part of a study that aims to help adolescents build a better relationship with their phones.',
+    programaS5P2: 'The program is <strong>free</strong> and all your information is <strong>confidential</strong>, protected by the ethics boards of the participating universities.',
+
+    // Programa — Section 6: Who can join
+    programaS6H2: 'Is this for me?',
+    programaS6Lead: 'You can join if:',
+    programaS6Item1: 'You care for an <strong>adolescent aged 11–17</strong>.',
+    programaS6Item2: 'Your child <strong>has their own phone</strong>.',
+    programaS6Note: 'You don\'t need to know anything about technology, and your child doesn\'t need to "have a problem" with their phone.',
+
+    // Programa — Section 7: FAQ
+    programaS7H2: 'Frequently asked questions',
+    programaS7Q1: 'Does it cost anything?',
+    programaS7A1: 'No, it is 100% free.',
+    programaS7Q2: 'Do I have to go somewhere?',
+    programaS7A2: 'No, everything is by phone and WhatsApp.',
+    programaS7Q3: 'Does my child participate too?',
+    programaS7A3: 'Yes — the program works best when your child takes the course with you.',
+    programaS7Q4: 'What about my data?',
+    programaS7A4Pre: 'Your information is confidential. Only the research team has access. More detail in our',
+    programaS7A4Link: 'privacy policy',
+    programaS7A4Post: '.',
+    programaS7Q5: 'Can I withdraw?',
+    programaS7A5: 'At any time, without having to give a reason.',
+
+    // Programa — Final CTA
+    programaCtaH2: 'Start your digital rhythm',
+    programaCtaText: "Registration takes a few minutes. We'll then contact you to schedule your welcome call.",
+    programaCtaBtn: 'Register now',
+
+    // Registration — short intro blocks
+    registerIntroH2: "Three weeks to find your family's digital rhythm",
+    registerIntroP: 'A free phone-based program for parents and caregivers who want to support their adolescent children in a healthier relationship with their phone. On the schedule you choose.',
+    registerBenefitsH2: "What you'll take away",
+    registerBenefit1: 'A person who listens and walks with you each week.',
+    registerBenefit2: "Clarity on how phones affect your child's wellbeing and learning.",
+    registerBenefit3: 'Evidence-based tools for your family.',
+    registerBenefit4: 'Calmer conversations at home.',
+    registerTrustH2: 'Why you can trust this',
+    registerTrustText: 'This program is an initiative of researchers at <strong>Nova School of Business and Economics, Harvard, Yale, MIT and the Paris School of Economics</strong>, as part of a study that aims to help adolescents build a better relationship with their phones.',
+    registerTrustMoreLink: 'Learn about the full program',
   },
   es: {
     // Nav
     navPrivacy: 'Privacidad',
     navDeleteData: 'Eliminar Datos',
     navRegister: 'Registro',
+    navPrograma: 'Sobre el programa',
 
     // Home — tabs
     tabApp: 'La App',
@@ -260,20 +359,117 @@ const translations = {
     deleteAfterText: 'Una vez que tus datos sean eliminados, ya no podrás participar en el estudio. Si solo deseas dejar de usar la aplicación pero mantener tus datos para la investigación, puedes simplemente desinstalar la aplicación sin enviar una solicitud de eliminación.',
 
     // Registration
-    registerTitle: 'Mi Ritmo Digital - Formulario de Registro',
-    registerSubtitle: 'PROGRAMA DE ORIENTACIÓN A PADRES, MADRES Y CUIDADORES EN EL USO SALUDABLE DE CELULARES EN LA ADOLESCENCIA',
+    registerHeroH1: 'Regístrate al programa',
+    registerHeroSubtitle: 'Escríbenos por WhatsApp y un asesor del programa te responde. Es gratis y no te compromete a nada.',
+    registerHeroCta: 'Escríbenos por WhatsApp',
+    registerFinalCtaH2: '¿Listo para empezar?',
+    registerFinalCtaText: 'Mándanos un WhatsApp y un asesor del programa te contacta para agendar tu llamada de bienvenida.',
+    registerFinalCtaBtn: 'Escríbenos por WhatsApp',
     registerVideoTitle: '¿Por qué inscribirte al programa?',
-    registerWhatsappTitle: '¡Inscríbete al programa gratuito — escríbenos!',
 
     // Agendar
     navAgendar: 'Agendar',
-    agendarTitle: 'Agenda tu primera llamada',
-    agendarSubtitle: 'LLAMADA INTRODUCTORIA DE 25 MINUTOS PARA EMPEZAR EL PROGRAMA',
-    agendarIntro: '¡Bienvenido/a! Elige el horario que mejor les quede a ti y a tu hijo/a. En 25 minutos vamos a conocernos, contarte cómo funciona el programa y resolver tus dudas.',
+    agendarTitle: 'Agenda tu llamada',
+    agendarSubtitle: 'LLAMADA DE 25 MINUTOS CON EL EQUIPO DEL PROGRAMA',
+    agendarIntro: 'Elige el horario que mejor les quede a ti y a tu hijo/a. La llamada dura unos 25 minutos.',
     agendarFallback: 'Si el calendario no carga,',
     agendarFallbackLink: 'ábrelo directamente aquí',
-    agendarCta: 'Agendar tu primera llamada',
-    agendarCtaHelper: '¿Ya llenaste el formulario? Elige el horario de tu llamada introductoria:',
+    agendarCta: 'Agenda tu llamada',
+    agendarCtaHelper: '¿Ya llenaste el formulario? Elige el horario de tu llamada:',
+
+    // Programa — Hero
+    programaHeroH1: 'Encuentra tu Ritmo Digital',
+    programaHeroSubtitle: 'Un programa gratuito de acompañamiento para padres, madres y cuidadores que quieren ayudar a sus hijos adolescentes a tener una relación más sana con el celular.',
+    programaHeroCta: 'Regístrate al programa',
+
+    // Programa — Sección 1: Por qué
+    programaS1H2: 'Para que tu hijo/a aprenda mejor y se sienta mejor',
+    programaS1P1: 'El uso problemático del celular en la adolescencia afecta dos cosas que como papás nos importan profundamente: el <strong>rendimiento académico</strong> y el <strong>bienestar emocional</strong> — el sueño, la atención, el ánimo, la autoestima. <strong>Mi Ritmo Digital</strong> existe para apoyarte en esos dos frentes.',
+    programaS1P2: 'Te acompañamos con conversaciones cercanas y herramientas basadas en evidencia para que encuentres, con tu hijo/a, un mejor equilibrio.',
+
+    // Programa — Sección 2: Cómo funciona
+    programaS2H2: 'Tres semanas. Llamadas cortas por un experto. Desde la comodidad de tu casa.',
+    programaS2Lead: 'El programa dura <strong>3 semanas</strong> y se hace <strong>por teléfono y WhatsApp</strong> — tú eliges los horarios.',
+    programaS2Item1Icon: '🗓',
+    programaS2Item1Label: '1 llamada de bienvenida',
+    programaS2Item1Detail: '(~20 min)',
+    programaS2Item2Icon: '📞',
+    programaS2Item2Label: '3 llamadas semanales',
+    programaS2Item2Detail: '(~20 min cada una), con tu facilitador/a experto/a',
+    programaS2Item3Icon: '💬',
+    programaS2Item3Label: 'Mensajes por WhatsApp',
+    programaS2Item3Detail: 'entre sesiones',
+    programaS2Item4Icon: '📱',
+    programaS2Item4Label: 'La app Mi Ritmo Digital',
+    programaS2Item4Detail: 'para conocer el uso del celular',
+    programaS2Total: 'En total, alrededor de <strong>1.5 horas</strong> distribuidas en pequeñas conversaciones.',
+
+    // Programa — Sección 3: Módulos
+    programaS3H2: 'Tres temas, una semana cada uno',
+    programaS3M1Icon: '🌙',
+    programaS3M1Title: 'Módulo 1 — Sueño y celular',
+    programaS3M1Desc: 'La importancia del sueño en la adolescencia y cómo el celular puede afectarlo.',
+    programaS3M2Icon: '⏱',
+    programaS3M2Title: 'Módulo 2 — Tiempo de calidad',
+    programaS3M2Desc: 'Cuánto tiempo realmente pasan los adolescentes frente a la pantalla y qué dice la evidencia sobre su uso.',
+    programaS3M3Icon: '🎬',
+    programaS3M3Title: 'Módulo 3 — Contenido de calidad',
+    programaS3M3Desc: 'Qué tipo de contenido consumen los adolescentes en sus celulares y cómo eso puede influir en su bienestar.',
+
+    // Programa — Sección 4: Beneficios
+    programaS4H2: 'Beneficios para ti y para tu hijo/a',
+    programaS4Item1Icon: '📞',
+    programaS4Item1: 'Una persona que te escucha y te acompaña cada semana.',
+    programaS4Item2Icon: '🧠',
+    programaS4Item2: 'Más claridad sobre cómo el celular afecta el bienestar y el aprendizaje de tu hijo/a.',
+    programaS4Item3Icon: '🛠',
+    programaS4Item3: 'Herramientas concretas, basadas en evidencia.',
+    programaS4Item4Icon: '🌿',
+    programaS4Item4: 'Conversaciones más tranquilas en casa.',
+
+    // Programa — Sección 5: Quiénes están detrás
+    programaS5H2: 'Quiénes están detrás del programa',
+    programaS5P1: 'Este programa es una iniciativa de investigadores de <strong>Nova School of Business and Economics, Harvard, Yale, MIT y la Paris School of Economics</strong>, dentro de un estudio que busca ayudar a los adolescentes a tener una mejor relación con el celular.',
+    programaS5P2: 'El programa es <strong>gratuito</strong> y toda tu información es <strong>confidencial</strong>, protegida por los comités de ética de las universidades participantes.',
+
+    // Programa — Sección 6: Quién puede participar
+    programaS6H2: '¿Es para mí?',
+    programaS6Lead: 'Puedes inscribirte si:',
+    programaS6Item1: 'Estás a cargo de un/a <strong>adolescente de 11 a 17 años</strong>.',
+    programaS6Item2: 'Tu hijo/a <strong>tiene celular propio</strong>.',
+    programaS6Note: 'No necesitas saber de tecnología, ni que tu hijo/a "tenga un problema" con el celular.',
+
+    // Programa — Sección 7: FAQ
+    programaS7H2: 'Preguntas frecuentes',
+    programaS7Q1: '¿Tiene algún costo?',
+    programaS7A1: 'No, es 100% gratuito.',
+    programaS7Q2: '¿Tengo que ir a algún lugar?',
+    programaS7A2: 'No, todo es por teléfono y WhatsApp.',
+    programaS7Q3: '¿Mi hijo/a también participa?',
+    programaS7A3: 'Sí, el programa funciona mejor si tu hijo/a hace el curso contigo.',
+    programaS7Q4: '¿Qué pasa con mis datos?',
+    programaS7A4Pre: 'Tu información es confidencial. Solo el equipo de investigación tiene acceso. Más detalles en nuestra',
+    programaS7A4Link: 'política de privacidad',
+    programaS7A4Post: '.',
+    programaS7Q5: '¿Puedo retirarme?',
+    programaS7A5: 'En cualquier momento, sin tener que dar explicaciones.',
+
+    // Programa — Final CTA
+    programaCtaH2: 'Comienza tu ritmo digital',
+    programaCtaText: 'Inscribirte toma unos minutos. Luego te contactamos para agendar tu llamada de bienvenida.',
+    programaCtaBtn: 'Regístrate ahora',
+
+    // Registration — bloques cortos de intro
+    registerIntroH2: 'Tres semanas para encontrar el ritmo digital de tu familia',
+    registerIntroP: 'Un programa gratuito por teléfono para padres, madres y cuidadores que quieren acompañar a sus hijos adolescentes en una relación más sana con el celular. En los horarios que tú eliges.',
+    registerBenefitsH2: 'Lo que vas a llevarte',
+    registerBenefit1: 'Una persona que te escucha y te acompaña cada semana.',
+    registerBenefit2: 'Claridad sobre cómo el celular afecta el bienestar y el aprendizaje de tu hijo/a.',
+    registerBenefit3: 'Herramientas basadas en evidencia para tu familia.',
+    registerBenefit4: 'Conversaciones más tranquilas en casa.',
+    registerTrustH2: '¿Por qué es de confianza?',
+    registerTrustText: 'Este programa es una iniciativa de investigadores de <strong>Nova School of Business and Economics, Harvard, Yale, MIT y la Paris School of Economics</strong>, dentro de un estudio que busca ayudar a los adolescentes a tener una mejor relación con el celular.',
+    registerTrustMoreLink: 'Conoce el programa completo',
   },
 }
 
