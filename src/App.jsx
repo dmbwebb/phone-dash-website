@@ -7,6 +7,7 @@ import Registration from './pages/Registration'
 import Agendar from './pages/Agendar'
 import Programa from './pages/Programa'
 import WhatsAppFloat from './components/WhatsAppFloat'
+import { trackPageView } from './analytics'
 import './App.css'
 
 function App() {
@@ -19,6 +20,9 @@ function App() {
         page_title: document.title,
       })
     }
+    // Meta Pixel: the base snippet only fires PageView on the initial load,
+    // so we fire it again on each client-side route change.
+    trackPageView()
   }, [location])
 
   return (

@@ -1,5 +1,6 @@
 import { useLanguage } from '../LanguageContext'
 import { buildWhatsappLink } from '../config'
+import { trackLead } from '../analytics'
 
 const TOOLTIP = {
   es: 'Escríbenos por WhatsApp',
@@ -25,6 +26,7 @@ function WhatsAppFloat() {
       className="whatsapp-float"
       aria-label={aria}
       data-tooltip={tooltip}
+      onClick={trackLead}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

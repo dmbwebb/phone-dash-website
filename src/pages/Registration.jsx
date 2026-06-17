@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useLanguage } from '../LanguageContext'
 import { buildWhatsappLink } from '../config'
+import { trackLead } from '../analytics'
 
 const baseUrl = import.meta.env.BASE_URL
 
@@ -74,6 +75,7 @@ function Registration() {
             target="_blank"
             rel="noopener noreferrer"
             className="cta-link cta-link--whatsapp programa-hero__cta"
+            onClick={trackLead}
           >
             <WhatsAppIcon />
             <span>{t('registerHeroCta')}</span>
@@ -145,6 +147,7 @@ function Registration() {
             target="_blank"
             rel="noopener noreferrer"
             className="cta-link cta-link--whatsapp"
+            onClick={trackLead}
           >
             <WhatsAppIcon />
             <span>{t('registerFinalCtaBtn')}</span>
