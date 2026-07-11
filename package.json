@@ -6,7 +6,7 @@
   "homepage": "https://www.miritmodigital.com",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && mkdir -p dist/register dist/agendar dist/programa && cp dist/index.html dist/register/index.html && cp dist/index.html dist/agendar/index.html && cp dist/index.html dist/programa/index.html && node scripts/prerender.mjs",
+    "build": "vite build && mkdir -p dist/register dist/agendar dist/programa dist/curso/estilos-de-crianza && cp dist/index.html dist/register/index.html && cp dist/index.html dist/agendar/index.html && cp dist/index.html dist/programa/index.html && cp dist/index.html dist/curso/index.html && cp dist/index.html dist/curso/estilos-de-crianza/index.html && node scripts/prerender.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
     "deploy": "npm run build && gh-pages -d dist"

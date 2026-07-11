@@ -6,6 +6,8 @@ import DataDeletion from './pages/DataDeletion'
 import Registration from './pages/Registration'
 import Agendar from './pages/Agendar'
 import Programa from './pages/Programa'
+import CursoHome from './pages/curso/CursoHome'
+import EstilosCrianza from './pages/curso/EstilosCrianza'
 import WhatsAppFloat from './components/WhatsAppFloat'
 import { trackPageView } from './analytics'
 import './App.css'
@@ -34,6 +36,8 @@ function App() {
         <Route path="/register" element={<Registration />} />
         <Route path="/agendar" element={<Agendar />} />
         <Route path="/programa" element={<Programa />} />
+        <Route path="/curso" element={<CursoHome />} />
+        <Route path="/curso/estilos-de-crianza" element={<EstilosCrianza />} />
       </Routes>
       <WhatsAppFloat />
     </>
