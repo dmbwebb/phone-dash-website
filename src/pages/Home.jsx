@@ -6,7 +6,7 @@ const baseUrl = import.meta.env.BASE_URL
 
 function Home() {
   const { language, toggleLanguage, t } = useLanguage()
-  const [activeTab, setActiveTab] = useState('app')
+  const [activeTab, setActiveTab] = useState('program')
 
   return (
     <div className="page">
@@ -63,19 +63,19 @@ function Home() {
         <div className="home-tabs fade-in-up delay-2" role="tablist">
           <button
             role="tab"
-            aria-selected={activeTab === 'app'}
-            className={`home-tab${activeTab === 'app' ? ' active' : ''}`}
-            onClick={() => setActiveTab('app')}
-          >
-            {t('tabApp')}
-          </button>
-          <button
-            role="tab"
             aria-selected={activeTab === 'program'}
             className={`home-tab${activeTab === 'program' ? ' active' : ''}`}
             onClick={() => setActiveTab('program')}
           >
             {t('tabProgram')}
+          </button>
+          <button
+            role="tab"
+            aria-selected={activeTab === 'app'}
+            className={`home-tab${activeTab === 'app' ? ' active' : ''}`}
+            onClick={() => setActiveTab('app')}
+          >
+            {t('tabApp')}
           </button>
         </div>
 

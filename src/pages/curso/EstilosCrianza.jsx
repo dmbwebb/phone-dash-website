@@ -13,28 +13,28 @@ const ESTILOS = {
   toro: {
     emoji: '🐂',
     nombre: 'El Toro',
-    subtitulo: 'El Mano Dura',
-    desc: 'Muchas reglas, poca explicación. Lo que el papá o la mamá dice, se hace — sin preguntas. El control es lo primero.',
+    subtitulo: 'Estilo autoritario',
+    desc: 'Exige obediencia ciega: control estricto, sin explicaciones ni espacio para el diálogo. Se basa en el "porque lo digo yo". Cree que lo único que su hijo necesita es control.',
     tags: ['Alta exigencia', 'Poco diálogo', 'Poca calidez'],
-    frase: '"Nada de pantalla. Punto. No me explico."',
-    resultado: 'El hijo obedece por miedo, no por convicción. Cuando puede, busca la pantalla a escondidas.',
+    frase: '"Porque yo lo digo."',
+    resultado: 'El hijo obedece por miedo, no por convicción. Cuando puede, hace las cosas a escondidas.',
   },
   pato: {
     emoji: '🦆',
     nombre: 'El Pato',
-    subtitulo: 'El Blandito',
-    desc: 'Mucho cariño, pero difícil decir que no. Los horarios cambian según el humor del día. Evita el conflicto a toda costa.',
-    tags: ['Alta calidez', 'Sin rutinas', 'Cede fácil'],
-    frase: '"Bueno, pero solo 10 minutos más…" (y se vuelven 2 horas)',
+    subtitulo: 'Estilo permisivo',
+    desc: 'Brinda mucho afecto y libertad, pero carece de normas y consecuencias. Cree que su hijo es frágil y por eso debe ser protegido de todo.',
+    tags: ['Alta calidez', 'Sin normas', 'Cede fácil'],
+    frase: '"¡Claro que sí, mi amor, lo que quieras!"',
     resultado: 'El hijo/a aprende que insistiendo, siempre gana.',
   },
   aguila: {
     emoji: '🦅',
     nombre: 'El Águila',
-    subtitulo: 'Empático/a pero Firme',
-    desc: 'Reglas claras y afecto. Escucha, explica el por qué, y mantiene el límite aunque duela. Ve el panorama completo.',
+    subtitulo: 'Estilo equilibrado',
+    desc: 'Guía con firmeza y estructura, pero siempre desde el afecto, el diálogo y el respeto. Piensa que su hijo es capaz de grandes cosas, pero necesita apoyo y estructura para lograrlo.',
     tags: ['Firme con amor', 'Explica', 'Consistente'],
-    frase: '"Tienes 30 minutos. Cuando se acaben, apagamos — eso fue lo que acordamos."',
+    frase: '"Entiendo cómo te sientes. Y aun así, esta es la norma."',
     resultado: 'El hijo/a aprende a autorregularse porque entiende el por qué de las reglas.',
   },
 }
@@ -43,8 +43,8 @@ const ESTILOS = {
 const MENSAJES = {
   toro: 'En tu casa hay reglas y eso es muy valioso: a tu hijo/a no le falta estructura. Tu reto es sumar diálogo y calidez — explicar el porqué y escuchar cómo se siente. Cuando el límite viene con explicación, se obedece por convicción y no por miedo.',
   pato: 'Eres puro cariño, y eso es una gran fortaleza: tu hijo/a sabe que puede contar contigo. Tu reto es sostener los límites — decir que no y mantenerlo, aunque haya protesta. Un acuerdo que a veces aplica y a veces no, enseña que insistiendo se gana.',
-  aguila: '¡Felicitaciones! Ya combinas lo más difícil: reglas claras con afecto. Este es justamente el estilo que promueve el programa — sigue leyendo para conocer los tres personajes y por qué el tuyo funciona.',
-  mixto: 'Como la mayoría de cuidadores, combinas rasgos de varios estilos según el día y la situación. Eso es completamente normal — sigue leyendo para conocer los tres personajes y hacia dónde queremos movernos.',
+  aguila: '¡Felicitaciones! Ya combinas lo más difícil: reglas claras con afecto. Este es justamente el estilo que promueve el programa — sigue leyendo para conocer los tres estilos y por qué el tuyo funciona.',
+  mixto: 'Como la mayoría de cuidadores, combinas rasgos de varios estilos según el día y la situación. Eso es completamente normal — sigue leyendo para conocer los tres estilos y hacia dónde queremos movernos.',
 }
 
 // Las opciones se muestran SIN pistas (sin emojis) y en orden
@@ -112,7 +112,7 @@ function TarjetaEstilo({ estilo }) {
         {e.tags.map((t) => <span key={t}>{t}</span>)}
       </div>
       <div className="estilo-card__ejemplo">
-        <span className="estilo-card__ejemplo-label">Con el celular dice:</span>
+        <span className="estilo-card__ejemplo-label">Su frase típica:</span>
         <em>{e.frase}</em>
         <p>{e.resultado}</p>
       </div>
@@ -137,7 +137,7 @@ function MapaEstilos() {
           </div>
           <div className="mapa-celda mapa-celda--aguila">
             <span className="mapa-celda__emoji" aria-hidden="true">🦅</span>
-            <strong>El Águila</strong>
+            <strong>El Águila ⭐</strong>
             <span>Muchas reglas, mucho apoyo</span>
           </div>
           <div className="mapa-celda mapa-celda--vacia">
@@ -256,9 +256,9 @@ function Revelacion({ respuestas, onReiniciar }) {
       {/* ── Explicación: los tres estilos (infografía) ── */}
       <div className="curso-section-label">Los tres estilos de crianza</div>
       <p className="curso-lead">
-        La ciencia que estudia la crianza encuentra una y otra vez estos mismos
-        tres tipos de cuidador — en el programa los llamamos por su animal.
-        Mira en cuál te reconoces:
+        Los expertos encuentran una y otra vez estos mismos tres estilos de
+        crianza — en el programa los llamamos por su animal. Mira en cuál te
+        reconoces:
       </p>
       <div className="estilos-grid">
         {['toro', 'pato', 'aguila'].map((e) => (
@@ -269,20 +269,21 @@ function Revelacion({ respuestas, onReiniciar }) {
       {/* ── Diagrama: el mapa de los estilos ── */}
       <div className="curso-section-label">El mapa de los estilos</div>
       <p className="curso-lead">
-        Los estilos se diferencian en dos cosas: cuántas <strong>reglas</strong>{' '}
-        ponemos y cuánto <strong>apoyo</strong> damos.
+        ¿Cómo entenderlos? Imagina un mapa con dos ejes: cuántas{' '}
+        <strong>reglas</strong> ponemos y cuánto <strong>apoyo</strong> damos.
+        El Águila vive en el <strong>cuadrante dorado</strong>: muchas reglas y
+        mucho apoyo.
       </p>
       <MapaEstilos />
 
       {/* ── El estilo que promovemos ── */}
       <div className="curso-section-label">¿Cuál promovemos y por qué?</div>
       <p className="curso-lead">
-        Décadas de investigación llegan a la misma conclusión: los niños y
-        adolescentes que mejor aprenden a regularse — con el celular y con todo
-        lo demás — crecen con cuidadores <strong>empáticos pero firmes</strong>.
-        Ni puro control (enseña a obedecer por miedo y a esconderse), ni pura
-        flexibilidad (enseña que insistiendo se gana): reglas claras, explicadas
-        con cariño y sostenidas con calma.
+        Los niños y adolescentes que mejor aprenden a regularse — con el
+        celular y con todo lo demás — crecen con cuidadores{' '}
+        <strong>empáticos pero firmes</strong>. Ni puro control, ni pura
+        flexibilidad: <strong>reglas claras, explicadas con cariño y
+        sostenidas con calma</strong>.
       </p>
 
       {/* ── Mensaje motivacional ── */}
@@ -317,14 +318,14 @@ function ArticuloEstilos() {
         <>
           <section className="section fade-in-up delay-1">
             <p>
-              ¿Alguna vez te has preguntado <strong>qué tipo de mamá, papá o
-              cuidador eres</strong>? No existen categorías perfectas — cada
-              familia es un mundo — pero los expertos en crianza llevan décadas
+              ¿Alguna vez te has preguntado <strong>qué estilo de crianza
+              tienes</strong>? No existen categorías perfectas — cada familia
+              es un mundo — pero los expertos en crianza llevan décadas
               estudiando cómo criamos, y han propuesto{' '}
-              <strong>tres tipos de padres</strong>.
+              <strong>tres estilos de crianza</strong>.
             </p>
             <p>
-              ¿Cuál de los tres eres tú? Responde este pequeño quiz y
+              ¿Cuál de los tres es el tuyo? Responde este pequeño quiz y
               averígualo 😉. Contesta pensando en cómo reaccionas{' '}
               <strong>de verdad</strong> — no hay respuestas buenas ni malas, y
               nadie más ve tu resultado.
@@ -335,7 +336,7 @@ function ArticuloEstilos() {
             <Quiz onTerminado={setRespuestas} />
             <p className="quiz-nota">
               🔓 Al terminar el quiz se revela tu resultado y la explicación de
-              los tres tipos.
+              los tres estilos de crianza.
             </p>
           </div>
         </>

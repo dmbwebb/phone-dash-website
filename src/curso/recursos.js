@@ -10,7 +10,7 @@ export const RECURSOS = [
     tipo: 'Blog + Quiz',
     titulo: '¿Qué tipo de cuidador o cuidadora eres?',
     descripcion:
-      '¿Qué tipo de mamá, papá o cuidador eres? Los expertos en crianza han propuesto tres tipos de padres. Responde el quiz y averígualo.',
+      '¿Alguna vez te has preguntado qué estilo de crianza tienes? Los expertos han propuesto tres estilos. Responde el quiz y averigua el tuyo.',
     fecha: 'Julio 2026',
     arms: ['rs', 'rspp'],
   },

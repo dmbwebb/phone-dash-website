@@ -1723,10 +1723,12 @@ a.curso-card:hover {
 .mapa-celda--toro strong { color: #b91c1c; }
 .mapa-celda--pato { background: #fffbeb; border-color: #fde68a; }
 .mapa-celda--pato strong { color: #b45309; }
+/* El "cuadrante dorado": azul del Águila con marco y brillo dorados */
 .mapa-celda--aguila {
-  background: #eff6ff;
-  border-color: #2563eb;
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.18);
+  background: linear-gradient(160deg, #fefce8 0%, #eff6ff 55%);
+  border-color: #eab308;
+  border-width: 2px;
+  box-shadow: 0 6px 22px rgba(234, 179, 8, 0.28);
 }
 .mapa-celda--aguila strong { color: #1d4ed8; }
 .mapa-celda--vacia {
