@@ -43,8 +43,8 @@ const ESTILOS = {
 const MENSAJES = {
   toro: 'En tu casa hay reglas y eso es muy valioso: a tu hijo/a no le falta estructura. Tu reto es sumar diálogo y calidez — explicar el porqué y escuchar cómo se siente. Cuando el límite viene con explicación, se obedece por convicción y no por miedo.',
   pato: 'Eres puro cariño, y eso es una gran fortaleza: tu hijo/a sabe que puede contar contigo. Tu reto es sostener los límites — decir que no y mantenerlo, aunque haya protesta. Un acuerdo que a veces aplica y a veces no, enseña que insistiendo se gana.',
-  aguila: '¡Felicitaciones! Ya combinas lo más difícil: reglas claras con afecto. Este es justamente el estilo que promueve el programa — las claves de arriba te sirven para mantenerlo incluso en los días difíciles.',
-  mixto: 'Como la mayoría de cuidadores, combinas rasgos de varios estilos según el día y la situación. Eso es completamente normal — lo importante es saber hacia dónde moverse: más Águila, un acuerdo a la vez.',
+  aguila: '¡Felicitaciones! Ya combinas lo más difícil: reglas claras con afecto. Este es justamente el estilo que promueve el programa — sigue leyendo para conocer los tres personajes y por qué el tuyo funciona.',
+  mixto: 'Como la mayoría de cuidadores, combinas rasgos de varios estilos según el día y la situación. Eso es completamente normal — sigue leyendo para conocer los tres personajes y hacia dónde queremos movernos.',
 }
 
 // Las opciones se muestran SIN pistas (sin emojis) y en orden
@@ -92,14 +92,6 @@ const PREGUNTAS = [
   },
 ]
 
-const TIPS_AGUILA = [
-  { titulo: 'Pon los acuerdos por escrito.', texto: 'Escribe los horarios del celular en un papel y pégalo en la nevera o en el cuarto. Lo que está escrito no se discute.' },
-  { titulo: 'Avisa antes de que se acabe el tiempo.', texto: 'Di "en 5 minutos apagamos" — así tu hijo/a no siente que lo cortan de sorpresa.' },
-  { titulo: 'Explica el por qué, una sola vez.', texto: 'No tienes que justificarte cada vez, pero sí explicar con calma: "el celular en la noche afecta tu sueño."' },
-  { titulo: 'Si se ponen bravos/as, no cedas.', texto: 'Mantén el límite con calma. Ceder una vez enseña que bravuconear funciona.' },
-  { titulo: 'Consistencia + cariño = confianza.', texto: 'No se trata de ser perfecto/a, sino de ser predecible. Tu hijo/a necesita saber qué esperar de ti.' },
-]
-
 function calcularResultado(respuestas) {
   const conteo = { toro: 0, pato: 0, aguila: 0 }
   respuestas.forEach((r) => { conteo[r] += 1 })
@@ -133,34 +125,34 @@ function MapaEstilos() {
   return (
     <div className="mapa-estilos">
       <div className="mapa-estilos__eje-y" aria-hidden="true">
-        <span>← Más reglas</span>
-        <span>Menos reglas →</span>
+        <span>Más reglas</span>
+        <span>Menos reglas</span>
       </div>
       <div className="mapa-estilos__cuerpo">
         <div className="mapa-estilos__grid">
           <div className="mapa-celda mapa-celda--toro">
             <span className="mapa-celda__emoji" aria-hidden="true">🐂</span>
             <strong>El Toro</strong>
-            <span>Muchas reglas, poco cariño</span>
+            <span>Muchas reglas, poco apoyo</span>
           </div>
           <div className="mapa-celda mapa-celda--aguila">
             <span className="mapa-celda__emoji" aria-hidden="true">🦅</span>
             <strong>El Águila</strong>
-            <span>Muchas reglas, mucho cariño</span>
+            <span>Muchas reglas, mucho apoyo</span>
           </div>
           <div className="mapa-celda mapa-celda--vacia">
             <span className="mapa-celda__emoji" aria-hidden="true">🫥</span>
-            <span>Sin reglas y sin acompañar: ahí no queremos estar</span>
+            <span>Sin reglas y sin apoyo: ahí no queremos estar</span>
           </div>
           <div className="mapa-celda mapa-celda--pato">
             <span className="mapa-celda__emoji" aria-hidden="true">🦆</span>
             <strong>El Pato</strong>
-            <span>Pocas reglas, mucho cariño</span>
+            <span>Pocas reglas, mucho apoyo</span>
           </div>
         </div>
         <div className="mapa-estilos__eje-x" aria-hidden="true">
-          <span>← Menos cariño expresado</span>
-          <span>Más cariño expresado →</span>
+          <span>Menos apoyo</span>
+          <span>Más apoyo</span>
         </div>
       </div>
     </div>
@@ -234,52 +226,6 @@ function Revelacion({ respuestas, onReiniciar }) {
 
   return (
     <div ref={ref} className="quiz-resultado">
-      {/* ── Explicación: los tres estilos (infografía) ── */}
-      <div className="curso-section-label">Los tres estilos de crianza</div>
-      <p className="curso-lead">
-        ¡Listo! Antes de darte tu resultado, conoce a los tres personajes. La
-        ciencia que estudia la crianza encuentra una y otra vez estos mismos
-        tres tipos de cuidador — en el programa los llamamos por su animal:
-      </p>
-      <div className="estilos-grid">
-        {['toro', 'pato', 'aguila'].map((e) => (
-          <TarjetaEstilo key={e} estilo={e} />
-        ))}
-      </div>
-
-      {/* ── Diagrama: el mapa de los estilos ── */}
-      <div className="curso-section-label">El mapa de los estilos</div>
-      <p className="curso-lead">
-        Los estilos se diferencian en dos cosas: cuántas <strong>reglas</strong>{' '}
-        ponemos y cuánto <strong>cariño</strong> expresamos al ponerlas.
-      </p>
-      <MapaEstilos />
-
-      {/* ── El estilo que promovemos ── */}
-      <div className="curso-section-label">¿Cuál promovemos y por qué?</div>
-      <p className="curso-lead">
-        Décadas de investigación llegan a la misma conclusión: los niños y
-        adolescentes que mejor aprenden a regularse — con el celular y con todo
-        lo demás — crecen con cuidadores <strong>empáticos pero firmes</strong>.
-        Ni puro control (enseña a obedecer por miedo y a esconderse), ni pura
-        flexibilidad (enseña que insistiendo se gana): reglas claras, explicadas
-        con cariño y sostenidas con calma.
-      </p>
-      <div className="aguila-tips">
-        <div className="aguila-tips__header">
-          <span className="aguila-tips__animal" aria-hidden="true">🦅</span>
-          <span>¿Cómo ser más Águila en casa? — 5 claves prácticas</span>
-        </div>
-        <div className="aguila-tips__cols">
-          {TIPS_AGUILA.map((tip, i) => (
-            <div key={tip.titulo} className="aguila-tips__item">
-              <span className="aguila-tips__num">{i + 1}</span>
-              <span><strong>{tip.titulo}</strong> {tip.texto}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-
       {/* ── Tu resultado ── */}
       <div className="curso-section-label">Tu resultado</div>
       <div className={`resultado-hero resultado-hero--${esMixto ? 'mixto' : principal}`}>
@@ -306,6 +252,38 @@ function Revelacion({ respuestas, onReiniciar }) {
         </p>
         <p className="resultado-hero__mensaje">{mensaje}</p>
       </div>
+
+      {/* ── Explicación: los tres estilos (infografía) ── */}
+      <div className="curso-section-label">Los tres estilos de crianza</div>
+      <p className="curso-lead">
+        La ciencia que estudia la crianza encuentra una y otra vez estos mismos
+        tres tipos de cuidador — en el programa los llamamos por su animal.
+        Mira en cuál te reconoces:
+      </p>
+      <div className="estilos-grid">
+        {['toro', 'pato', 'aguila'].map((e) => (
+          <TarjetaEstilo key={e} estilo={e} />
+        ))}
+      </div>
+
+      {/* ── Diagrama: el mapa de los estilos ── */}
+      <div className="curso-section-label">El mapa de los estilos</div>
+      <p className="curso-lead">
+        Los estilos se diferencian en dos cosas: cuántas <strong>reglas</strong>{' '}
+        ponemos y cuánto <strong>apoyo</strong> damos.
+      </p>
+      <MapaEstilos />
+
+      {/* ── El estilo que promovemos ── */}
+      <div className="curso-section-label">¿Cuál promovemos y por qué?</div>
+      <p className="curso-lead">
+        Décadas de investigación llegan a la misma conclusión: los niños y
+        adolescentes que mejor aprenden a regularse — con el celular y con todo
+        lo demás — crecen con cuidadores <strong>empáticos pero firmes</strong>.
+        Ni puro control (enseña a obedecer por miedo y a esconderse), ni pura
+        flexibilidad (enseña que insistiendo se gana): reglas claras, explicadas
+        con cariño y sostenidas con calma.
+      </p>
 
       {/* ── Mensaje motivacional ── */}
       <div className="motivacional">
@@ -356,8 +334,8 @@ function ArticuloEstilos() {
           <div className="fade-in-up delay-2">
             <Quiz onTerminado={setRespuestas} />
             <p className="quiz-nota">
-              🔓 Al terminar el quiz se revelan los tipos de cuidador, tu
-              resultado y las claves del programa.
+              🔓 Al terminar el quiz se revela tu resultado y la explicación de
+              los tres tipos.
             </p>
           </div>
         </>
