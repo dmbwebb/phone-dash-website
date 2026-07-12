@@ -8,7 +8,7 @@ export const RECURSOS = [
     slug: 'estilos-de-crianza',
     emoji: '🧭',
     tipo: 'Blog + Quiz',
-    titulo: '¿Qué tipo de cuidador o cuidadora eres?',
+    titulo: '¿Qué estilo de crianza tienes?',
     descripcion:
       '¿Alguna vez te has preguntado qué estilo de crianza tienes? Los expertos han propuesto tres estilos. Responde el quiz y averigua el tuyo.',
     fecha: 'Julio 2026',

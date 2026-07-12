@@ -14,6 +14,7 @@ const ESTILOS = {
     emoji: '🐂',
     nombre: 'El Toro',
     subtitulo: 'Estilo autoritario',
+    adjetivo: 'autoritario',
     desc: 'Exige obediencia ciega: control estricto, sin explicaciones ni espacio para el diálogo. Se basa en el "porque lo digo yo". Cree que lo único que su hijo necesita es control.',
     tags: ['Alta exigencia', 'Poco diálogo', 'Poca calidez'],
     frase: '"Porque yo lo digo."',
@@ -23,6 +24,7 @@ const ESTILOS = {
     emoji: '🦆',
     nombre: 'El Pato',
     subtitulo: 'Estilo permisivo',
+    adjetivo: 'permisivo',
     desc: 'Brinda mucho afecto y libertad, pero carece de normas y consecuencias. Cree que su hijo es frágil y por eso debe ser protegido de todo.',
     tags: ['Alta calidez', 'Sin normas', 'Cede fácil'],
     frase: '"¡Claro que sí, mi amor, lo que quieras!"',
@@ -32,6 +34,7 @@ const ESTILOS = {
     emoji: '🦅',
     nombre: 'El Águila',
     subtitulo: 'Estilo equilibrado',
+    adjetivo: 'equilibrado',
     desc: 'Guía con firmeza y estructura, pero siempre desde el afecto, el diálogo y el respeto. Piensa que su hijo es capaz de grandes cosas, pero necesita apoyo y estructura para lograrlo.',
     tags: ['Firme con amor', 'Explica', 'Consistente'],
     frase: '"Entiendo cómo te sientes. Y aun así, esta es la norma."',
@@ -42,7 +45,7 @@ const ESTILOS = {
 // Mensaje personalizado según el resultado del quiz.
 const MENSAJES = {
   toro: 'En tu casa hay reglas y eso es muy valioso: a tu hijo/a no le falta estructura. Tu reto es sumar diálogo y calidez — explicar el porqué y escuchar cómo se siente. Cuando el límite viene con explicación, se obedece por convicción y no por miedo.',
-  pato: 'Eres puro cariño, y eso es una gran fortaleza: tu hijo/a sabe que puede contar contigo. Tu reto es sostener los límites — decir que no y mantenerlo, aunque haya protesta. Un acuerdo que a veces aplica y a veces no, enseña que insistiendo se gana.',
+  pato: 'Tu estilo es puro cariño, y esa es una gran fortaleza: tu hijo/a sabe que puede contar contigo. Tu reto es sostener los límites — decir que no y mantenerlo, aunque haya protesta. Un acuerdo que a veces aplica y a veces no, enseña que insistiendo se gana.',
   aguila: '¡Felicitaciones! Ya combinas lo más difícil: reglas claras con afecto. Este es justamente el estilo que promueve el programa — sigue leyendo para conocer los tres estilos y por qué el tuyo funciona.',
   mixto: 'Como la mayoría de cuidadores, combinas rasgos de varios estilos según el día y la situación. Eso es completamente normal — sigue leyendo para conocer los tres estilos y hacia dónde queremos movernos.',
 }
@@ -207,7 +210,12 @@ function Quiz({ onTerminado }) {
 // Todo lo que se revela DESPUÉS de terminar el quiz:
 // explicación (infografía) → resultado → mensaje motivacional.
 function Revelacion({ respuestas, onReiniciar }) {
-  const { conteo, ganadores } = calcularResultado(respuestas)
+  // respuestas puede ser null si el padre saltó el quiz — en ese caso
+  // se muestra la explicación sin la tarjeta de resultado.
+  const conResultado = Array.isArray(respuestas) && respuestas.length > 0
+  const { conteo, ganadores } = conResultado
+    ? calcularResultado(respuestas)
+    : { conteo: null, ganadores: [] }
   const esMixto = ganadores.length > 1
   const principal = ganadores[0]
   const mensaje = esMixto ? MENSAJES.mixto : MENSAJES[principal]
@@ -218,7 +226,9 @@ function Revelacion({ respuestas, onReiniciar }) {
     // Evento de analítica (si gtag está cargado): qué estilo salió.
     if (typeof window !== 'undefined' && window.gtag) {
       window.gtag('event', 'quiz_estilos_resultado', {
-        resultado: esMixto ? `mixto_${ganadores.join('_')}` : ganadores[0],
+        resultado: conResultado
+          ? (esMixto ? `mixto_${ganadores.join('_')}` : principal)
+          : 'quiz_saltado',
       })
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -226,32 +236,36 @@ function Revelacion({ respuestas, onReiniciar }) {
 
   return (
     <div ref={ref} className="quiz-resultado">
-      {/* ── Tu resultado ── */}
-      <div className="curso-section-label">Tu resultado</div>
-      <div className={`resultado-hero resultado-hero--${esMixto ? 'mixto' : principal}`}>
-        <div className="resultado-hero__emojis" aria-hidden="true">
-          {ganadores.map((g) => (
-            <span key={g}>{ESTILOS[g].emoji}</span>
-          ))}
-        </div>
-        {esMixto ? (
-          <h3>
-            Eres una mezcla de{' '}
-            {ganadores.map((g, i) => (
-              <span key={g}>
-                {ESTILOS[g].nombre}
-                {i < ganadores.length - 1 ? ' y ' : ''}
-              </span>
-            ))}
-          </h3>
-        ) : (
-          <h3>Eres {ESTILOS[principal].nombre} — {ESTILOS[principal].subtitulo}</h3>
-        )}
-        <p className="resultado-hero__conteo">
-          Tus respuestas: 🐂 {conteo.toro} · 🦆 {conteo.pato} · 🦅 {conteo.aguila}
-        </p>
-        <p className="resultado-hero__mensaje">{mensaje}</p>
-      </div>
+      {/* ── Tu resultado (solo si respondió el quiz) ── */}
+      {conResultado && (
+        <>
+          <div className="curso-section-label">Tu resultado</div>
+          <div className={`resultado-hero resultado-hero--${esMixto ? 'mixto' : principal}`}>
+            <div className="resultado-hero__emojis" aria-hidden="true">
+              {ganadores.map((g) => (
+                <span key={g}>{ESTILOS[g].emoji}</span>
+              ))}
+            </div>
+            {esMixto ? (
+              <h3>
+                Tu estilo es una mezcla de{' '}
+                {ganadores.map((g, i) => (
+                  <span key={g}>
+                    {ESTILOS[g].nombre}
+                    {i < ganadores.length - 1 ? ' y ' : ''}
+                  </span>
+                ))}
+              </h3>
+            ) : (
+              <h3>Tu estilo es {ESTILOS[principal].nombre} — {ESTILOS[principal].adjetivo}</h3>
+            )}
+            <p className="resultado-hero__conteo">
+              Tus respuestas: 🐂 {conteo.toro} · 🦆 {conteo.pato} · 🦅 {conteo.aguila}
+            </p>
+            <p className="resultado-hero__mensaje">{mensaje}</p>
+          </div>
+        </>
+      )}
 
       {/* ── Explicación: los tres estilos (infografía) ── */}
       <div className="curso-section-label">Los tres estilos de crianza</div>
@@ -297,7 +311,7 @@ function Revelacion({ respuestas, onReiniciar }) {
           este programa lo vamos a entrenar juntos, paso a paso. 💪
         </p>
         <button onClick={onReiniciar} className="quiz__reiniciar">
-          Volver a responder el quiz
+          {conResultado ? 'Volver a responder el quiz' : 'Responder el quiz'}
         </button>
       </div>
     </div>
@@ -306,23 +320,29 @@ function Revelacion({ respuestas, onReiniciar }) {
 
 function ArticuloEstilos() {
   const [respuestas, setRespuestas] = useState(null)
+  const [saltado, setSaltado] = useState(false)
+
+  const reiniciar = () => {
+    setRespuestas(null)
+    setSaltado(false)
+  }
 
   return (
     <article className="curso-post">
       <header className="curso-post__header fade-in-up">
         <span className="curso-card__tipo">Blog del curso · Quiz · 5 min</span>
-        <h1>¿Qué tipo de cuidador o cuidadora eres?</h1>
+        <h1>¿Qué estilo de crianza tienes?</h1>
       </header>
 
-      {!respuestas ? (
+      {!respuestas && !saltado ? (
         <>
           <section className="section fade-in-up delay-1">
             <p>
               ¿Alguna vez te has preguntado <strong>qué estilo de crianza
               tienes</strong>? No existen categorías perfectas — cada familia
               es un mundo — pero los expertos en crianza llevan décadas
-              estudiando cómo criamos, y han propuesto{' '}
-              <strong>tres estilos de crianza</strong>.
+              estudiando cómo criamos, y han identificado{' '}
+              <strong>tres estilos muy comunes</strong>.
             </p>
             <p>
               ¿Cuál de los tres es el tuyo? Responde este pequeño quiz y
@@ -338,10 +358,16 @@ function ArticuloEstilos() {
               🔓 Al terminar el quiz se revela tu resultado y la explicación de
               los tres estilos de crianza.
             </p>
+            <p className="quiz-saltar">
+              ¿Ya hiciste el quiz antes?{' '}
+              <button onClick={() => setSaltado(true)}>
+                Salta directo a la explicación →
+              </button>
+            </p>
           </div>
         </>
       ) : (
-        <Revelacion respuestas={respuestas} onReiniciar={() => setRespuestas(null)} />
+        <Revelacion respuestas={respuestas} onReiniciar={reiniciar} />
       )}
 
       <Link to="/curso" className="back-link fade-in-up">
