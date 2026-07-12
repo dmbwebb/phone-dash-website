@@ -1911,6 +1911,45 @@ a.curso-card:hover {
   line-height: 1.6;
 }
 
+.curso-cta__texto {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto var(--space-sm);
+  padding: 0.85rem 1rem;
+  border: 1.5px solid rgba(22, 163, 74, 0.35);
+  border-radius: 14px;
+  background: #fff;
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+  resize: vertical;
+}
+
+.curso-cta__texto:focus {
+  outline: none;
+  border-color: #16a34a;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+}
+
+.curso-cta__texto::placeholder {
+  color: var(--text-muted);
+}
+
+.curso-cta__enviar {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.curso-cta__enviar:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
 .quiz__reiniciar {
   background: none;
   border: 1.5px solid var(--border);
