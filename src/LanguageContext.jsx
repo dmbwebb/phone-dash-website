@@ -29,6 +29,7 @@ const translations = {
     featureAdolescent: 'Improve their well-being',
     featureResearch: 'Help them do better in school',
     programCta: 'Register for the program',
+    cursoCta: 'Course content (participants)',
 
     footer: 'Built for academic research at Nova School of Business and Economics',
 
@@ -263,6 +264,7 @@ const translations = {
     featureAdolescent: 'Mejora su bienestar emocional',
     featureResearch: 'Mejora su aprendizaje',
     programCta: 'Regístrate ahora',
+    cursoCta: 'Contenido del curso (participantes)',
 
     footer: 'Desarrollado para investigación académica en Nova School of Business and Economics',
 

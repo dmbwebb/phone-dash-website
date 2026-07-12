@@ -1300,6 +1300,41 @@ ol.numbered-list li::before {
 }
 
 /* ═══════════════════════════════════════
+   CURSO — botón de acceso desde el Home
+═══════════════════════════════════════ */
+.curso-home-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2px;
+  padding: 0.7rem 1.6rem;
+  border-radius: 50px;
+  border: 1.5px solid rgba(37, 99, 235, 0.35);
+  background: rgba(37, 99, 235, 0.06);
+  color: var(--blue);
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.curso-home-link:hover {
+  background: rgba(37, 99, 235, 0.12);
+  border-color: var(--blue);
+  color: var(--blue);
+  transform: translateY(-2px);
+}
+
+.curso-home-link svg {
+  width: 15px;
+  height: 15px;
+  transition: transform 0.2s ease;
+}
+
+.curso-home-link:hover svg {
+  transform: translateX(3px);
+}
+
+/* ═══════════════════════════════════════
    CURSO — gate (clave de acceso)
 ═══════════════════════════════════════ */
 .curso-gate {
