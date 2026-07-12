@@ -339,15 +339,15 @@ function ArticuloEstilos() {
         <>
           <section className="section fade-in-up delay-1">
             <p>
-              Cuando aparece el celular — la pelea por apagarlo, el "cinco
-              minuticos más", la cara brava — cada cuidador reacciona a su
-              manera. Y la ciencia ha descubierto que esas maneras no son
-              infinitas: <strong>casi todos caemos en unos pocos tipos bien
-              definidos</strong>.
+              ¿Alguna vez te has preguntado <strong>qué tipo de mamá, papá o
+              cuidador eres</strong>? No existen categorías perfectas — cada
+              familia es un mundo — pero los expertos en crianza llevan décadas
+              estudiando cómo criamos, y han propuesto{' '}
+              <strong>tres tipos de padres</strong>.
             </p>
             <p>
-              ¿Cuáles son? Todavía no te lo contamos 😉. Responde estas{' '}
-              {PREGUNTAS.length} preguntas cortas pensando en cómo reaccionas{' '}
+              ¿Cuál de los tres eres tú? Responde este pequeño quiz y
+              averígualo 😉. Contesta pensando en cómo reaccionas{' '}
               <strong>de verdad</strong> — no hay respuestas buenas ni malas, y
               nadie más ve tu resultado.
             </p>

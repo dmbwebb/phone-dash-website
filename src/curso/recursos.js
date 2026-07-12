@@ -10,7 +10,7 @@ export const RECURSOS = [
     tipo: 'Blog + Quiz',
     titulo: '¿Qué tipo de cuidador o cuidadora eres?',
     descripcion:
-      'La ciencia clasifica a los cuidadores en distintos tipos según cómo ponen reglas y cómo acompañan. Responde el quiz y descubre el tuyo.',
+      '¿Qué tipo de mamá, papá o cuidador eres? Los expertos en crianza han propuesto tres tipos de padres. Responde el quiz y averígualo.',
     fecha: 'Julio 2026',
     arms: ['rs', 'rspp'],
   },
