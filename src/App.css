@@ -1877,6 +1877,40 @@ a.curso-card:hover {
   line-height: 1.6;
 }
 
+/* ═══════════════════════════════════════
+   CURSO — CTA final (cuéntanos por WhatsApp)
+═══════════════════════════════════════ */
+.curso-cta {
+  text-align: center;
+  margin: var(--space-md) 0;
+  padding: var(--space-lg) var(--space-md);
+  background: linear-gradient(135deg, rgba(37, 211, 102, 0.08) 0%, rgba(22, 163, 74, 0.03) 100%);
+  border: 1px solid rgba(37, 211, 102, 0.3);
+  border-radius: var(--radius-lg, 20px);
+}
+
+.curso-cta__emoji {
+  font-size: 2rem;
+  line-height: 1;
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+.curso-cta h3 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-xs);
+}
+
+.curso-cta p {
+  max-width: 520px;
+  margin: 0 auto var(--space-md);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
 .quiz__reiniciar {
   background: none;
   border: 1.5px solid var(--border);
