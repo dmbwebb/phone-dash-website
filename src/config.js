@@ -13,3 +13,8 @@ export function buildWhatsappLink(language = 'es') {
   const message = WHATSAPP_MESSAGES[language] || WHATSAPP_MESSAGES.es
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
 }
+
+// SurveyCTO web form for family registration + eligibility screening.
+// The trailing `caseid=` is required by SurveyCTO's web-collect URL format.
+export const REGISTRO_FORM_URL =
+  'https://kilongajfl.surveycto.com/collect/mrd_registro?caseid='

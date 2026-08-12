@@ -129,6 +129,14 @@ const translations = {
     registerHeroH1: 'Register for the program',
     registerHeroSubtitle: 'Message us on WhatsApp and a program advisor will get back to you. It is free, with no commitment.',
     registerHeroCta: 'Message us on WhatsApp',
+
+    // Inscripcion (sign-up form) page
+    inscripcionH1: 'Sign up for the program',
+    inscripcionSubtitle:
+      'Answer a few short questions to check that your family can participate and leave your contact details. It takes less than 3 minutes.',
+    inscripcionFallbackText: 'If the form does not load,',
+    inscripcionFallbackLink: 'open it in a new tab',
+    registerOnlineCta: 'Sign up online',
     registerFinalCtaH2: 'Ready to start?',
     registerFinalCtaText: 'Send us a WhatsApp and a program advisor will reach out to schedule your welcome call.',
     registerFinalCtaBtn: 'Message us on WhatsApp',
@@ -364,6 +372,14 @@ const translations = {
     registerHeroH1: 'Regístrate al programa',
     registerHeroSubtitle: 'Escríbenos por WhatsApp y un asesor del programa te responde. Es gratis y no te compromete a nada.',
     registerHeroCta: 'Escríbenos por WhatsApp',
+
+    // Inscripcion (formulario de inscripción)
+    inscripcionH1: 'Inscríbete al programa',
+    inscripcionSubtitle:
+      'Responde unas preguntas cortas para saber si tu familia puede participar y déjanos tus datos de contacto. Toma menos de 3 minutos.',
+    inscripcionFallbackText: 'Si el formulario no carga,',
+    inscripcionFallbackLink: 'ábrelo en una pestaña nueva',
+    registerOnlineCta: 'Inscríbete en línea',
     registerFinalCtaH2: '¿Listo para empezar?',
     registerFinalCtaText: 'Mándanos un WhatsApp y un asesor del programa te contacta para agendar tu llamada de bienvenida.',
     registerFinalCtaBtn: 'Escríbenos por WhatsApp',

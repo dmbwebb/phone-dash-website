@@ -70,11 +70,14 @@ function Registration() {
           />
           <h1>{t('registerHeroH1')}</h1>
           <p className="programa-hero__subtitle">{t('registerHeroSubtitle')}</p>
+          <Link to="/inscripcion" className="cta-link cta-link--program programa-hero__cta">
+            <span>{t('registerOnlineCta')}</span>
+          </Link>
           <a
             href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="cta-link cta-link--whatsapp programa-hero__cta"
+            className="cta-link cta-link--whatsapp"
             onClick={trackLead}
           >
             <WhatsAppIcon />
