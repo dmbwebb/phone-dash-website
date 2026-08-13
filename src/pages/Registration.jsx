@@ -131,20 +131,26 @@ function Registration() {
           </div>
         </section>
 
-        {/* Final CTA — WhatsApp */}
+        {/* Final CTA — online form, with WhatsApp as a secondary option */}
         <section className="programa-final-cta fade-in-up">
           <h2>{t('registerFinalCtaH2')}</h2>
           <p>{t('registerFinalCtaText')}</p>
-          <a
-            href={whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cta-link cta-link--whatsapp"
-            onClick={trackLead}
-          >
-            <WhatsAppIcon />
-            <span>{t('registerFinalCtaBtn')}</span>
-          </a>
+          <Link to="/inscripcion" className="cta-link cta-link--program">
+            <span>{t('registerOnlineCta')}</span>
+          </Link>
+          <p className="final-cta__alt">
+            {t('registerFinalCtaAltPre')}{' '}
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="final-cta__alt-link"
+              onClick={trackLead}
+            >
+              <WhatsAppIcon />
+              <span>{t('registerFinalCtaAltLink')}</span>
+            </a>
+          </p>
         </section>
 
         {/* Secondary — schedule a call */}

@@ -138,8 +138,9 @@ const translations = {
     inscripcionFallbackLink: 'open it in a new tab',
     registerOnlineCta: 'Sign up online',
     registerFinalCtaH2: 'Ready to start?',
-    registerFinalCtaText: 'Send us a WhatsApp and a program advisor will reach out to schedule your welcome call.',
-    registerFinalCtaBtn: 'Message us on WhatsApp',
+    registerFinalCtaText: 'Fill out the registration form and a program advisor will reach out to schedule your welcome call.',
+    registerFinalCtaAltPre: 'Prefer to talk to someone first?',
+    registerFinalCtaAltLink: 'Message us on WhatsApp',
     registerVideoTitle: 'Why join the program?',
 
     // Agendar
@@ -381,8 +382,9 @@ const translations = {
     inscripcionFallbackLink: 'ábrelo en una pestaña nueva',
     registerOnlineCta: 'Inscríbete en línea',
     registerFinalCtaH2: '¿Listo para empezar?',
-    registerFinalCtaText: 'Mándanos un WhatsApp y un asesor del programa te contacta para agendar tu llamada de bienvenida.',
-    registerFinalCtaBtn: 'Escríbenos por WhatsApp',
+    registerFinalCtaText: 'Llena el formulario de inscripción y un asesor del programa te contacta para agendar tu llamada de bienvenida.',
+    registerFinalCtaAltPre: '¿Prefieres hablar con alguien primero?',
+    registerFinalCtaAltLink: 'Escríbenos por WhatsApp',
     registerVideoTitle: '¿Por qué inscribirte al programa?',
 
     // Agendar

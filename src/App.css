@@ -1188,6 +1188,33 @@ ol.numbered-list li::before {
   color: var(--text-secondary);
 }
 
+/* Alternativa secundaria bajo el CTA principal (p. ej. WhatsApp) */
+.final-cta__alt {
+  margin: var(--space-md) auto 0 !important;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.final-cta__alt-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #16a34a;
+  font-weight: 600;
+  text-decoration: underline;
+  vertical-align: middle;
+}
+
+.final-cta__alt-link:hover {
+  color: #15803d;
+}
+
+.final-cta__alt-link svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
 /* ═══════════════════════════════════════
    REGISTRATION — short intro blocks
 ═══════════════════════════════════════ */
