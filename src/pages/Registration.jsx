@@ -73,16 +73,6 @@ function Registration() {
           <Link to="/inscripcion" className="cta-link cta-link--program programa-hero__cta">
             <span>{t('registerOnlineCta')}</span>
           </Link>
-          <a
-            href={whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cta-link cta-link--whatsapp"
-            onClick={trackLead}
-          >
-            <WhatsAppIcon />
-            <span>{t('registerHeroCta')}</span>
-          </a>
         </header>
 
         {/* Section 1 — Three weeks to find your digital rhythm */}

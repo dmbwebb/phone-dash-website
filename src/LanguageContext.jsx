@@ -127,7 +127,7 @@ const translations = {
 
     // Registration
     registerHeroH1: 'Register for the program',
-    registerHeroSubtitle: 'Message us on WhatsApp and a program advisor will get back to you. It is free, with no commitment.',
+    registerHeroSubtitle: 'Fill out the online registration form — it only takes a few minutes. It is free, with no commitment.',
     registerHeroCta: 'Message us on WhatsApp',
 
     // Inscripcion (sign-up form) page
@@ -370,7 +370,7 @@ const translations = {
 
     // Registration
     registerHeroH1: 'Regístrate al programa',
-    registerHeroSubtitle: 'Escríbenos por WhatsApp y un asesor del programa te responde. Es gratis y no te compromete a nada.',
+    registerHeroSubtitle: 'Llena el formulario de inscripción en línea — solo te toma unos minutos. Es gratis y no te compromete a nada.',
     registerHeroCta: 'Escríbenos por WhatsApp',
 
     // Inscripcion (formulario de inscripción)
