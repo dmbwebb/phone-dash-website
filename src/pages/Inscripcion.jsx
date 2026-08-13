@@ -1,12 +1,19 @@
 import { Link } from 'react-router-dom'
 import { useLanguage } from '../LanguageContext'
-import { REGISTRO_FORM_URL } from '../config'
+import { REGISTRO_FORM_URL, REGISTRO_FORM_URL_FULLSCREEN } from '../config'
 
 const baseUrl = import.meta.env.BASE_URL
 
-// Sign-up page: embeds the SurveyCTO registration + eligibility form.
-// The iframe is best-effort — the always-visible "open in a new tab" link is
-// the guaranteed path on phones or if the embed is ever blocked.
+// Sign-up page for the SurveyCTO registration + eligibility form.
+//
+// Two paths, chosen by CSS breakpoint rather than JS so there is no flash of
+// the wrong one on load:
+//   - phones (<768px): a full-width button that opens the form full-screen.
+//     A form with its own scrollbar nested inside a scrolling page is miserable
+//     on a small screen, and full-screen also makes the form first-party, so
+//     Safari stops blocking its cookies.
+//   - desktop: the iframe, where there is room for both.
+// The "it didn't load" link stays visible on both as the guaranteed path.
 function Inscripcion() {
   const { language, toggleLanguage, t } = useLanguage()
 
@@ -61,7 +68,34 @@ function Inscripcion() {
         </header>
 
         <section className="section fade-in-up delay-1">
-          <div className="form-embed">
+          {/* Phones: open the form full-screen instead of nesting it. */}
+          <div className="form-fullscreen-cta">
+            <a
+              href={REGISTRO_FORM_URL_FULLSCREEN}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cta-link"
+            >
+              <span>{t('inscripcionOpenForm')}</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                />
+              </svg>
+            </a>
+            <p className="form-fullscreen-cta__note">{t('inscripcionOpenFormNote')}</p>
+          </div>
+
+          {/* Desktop: room for the embed. */}
+          <div className="form-embed form-embed--desktop-only">
             <iframe
               src={REGISTRO_FORM_URL}
               title={t('inscripcionH1')}
@@ -75,9 +109,14 @@ function Inscripcion() {
               }}
             />
           </div>
+
           <p className="agendar-next__helper" style={{ marginTop: '1rem' }}>
             {t('inscripcionFallbackText')}{' '}
-            <a href={REGISTRO_FORM_URL} target="_blank" rel="noopener noreferrer">
+            <a
+              href={REGISTRO_FORM_URL_FULLSCREEN}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {t('inscripcionFallbackLink')}
             </a>
           </p>

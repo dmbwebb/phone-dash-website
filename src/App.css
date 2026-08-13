@@ -728,6 +728,44 @@ ol.numbered-list li::before {
   max-width: 100%;
 }
 
+/* Sign-up form: full-screen button on phones, iframe on desktop.
+   Swapped by breakpoint (not JS) so neither flashes on load. 768px is the
+   tablet threshold — below it there is not enough height for a form with its
+   own scrollbar inside a scrolling page. */
+.form-fullscreen-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  text-align: center;
+}
+
+.form-fullscreen-cta .cta-link {
+  width: 100%;
+  max-width: 420px;
+  justify-content: center;
+}
+
+.form-fullscreen-cta__note {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.form-embed--desktop-only {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .form-fullscreen-cta {
+    display: none;
+  }
+
+  .form-embed--desktop-only {
+    display: block;
+  }
+}
+
 /* ═══════════════════════════════════════
    VIDEO EMBED
 ═══════════════════════════════════════ */
